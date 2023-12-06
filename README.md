@@ -10,4 +10,4 @@ We are a group of six brazilian students of ComputerScience⚛️, and we are de
 Our first contact with this framework, so that website can be not good at all.👌
 
 The front-end⚛️ was developed by 3 of ours students, the another 2 are responsable to conduict the ideias💡, like a boss and they are the responsables for show our project for the professor.
-I was the main back-end🔤 developer but we also help each other, i has a lot of help with the back-end and also i help the front-end.
+I was the main back-end🔤 developer but we also help each other, i had a lot of help with the back-end and also i help the front-end.
