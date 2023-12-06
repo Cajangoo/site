@@ -22,7 +22,11 @@ class Usuario(db.Model):
 
 @app.route('/')
 def index():
-    return redirect(url_for('pagina_cadastro'))
+    return redirect(url_for('pagina_main'))
+
+@app.route('/main')
+def pagina_main():
+    return render_template('pagina_main.html')
 
 @app.route('/cadastro', methods=['GET', 'POST'])
 def pagina_cadastro():

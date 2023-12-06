@@ -15,7 +15,11 @@
   </header>
   <main style="background-color: #f7f7f7; padding: 2rem 0;">
     <section class="form" style="background-color: #fff; color: #000; border: 2px solid #0055aa; padding: 2rem; max-width: 600px; margin: 0 auto;">
-
+      <form action="/main" method="POST">
+      <label for="informacao">Informação:</label>
+      <input type="text" name="informacao" id="informacao" required>
+      <input type="submit" value="Enviar">
+    </form>
       <!-- Elemento de saudação no canto superior direito -->
       <div id="greeting"
         style="position: fixed; top: 10px; right: 10px; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; display: none;">
