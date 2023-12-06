@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Complain Here - Login</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_login.css') }}">
+  <script "{{ url_for('static', filename='js/script_login.js') }}"></script>
+</head>
+
+<body>
+  <header style="background-color: #0055aa; text-align: center; padding: 2rem 0;">
+    <img src="https://cdn.discordapp.com/attachments/955252715963957321/1176556126603587594/image.png?ex=656f4c47&is=655cd747&hm=198a337caa0a503c3c6f7896e3daf469e387b56a0a74fc2cbf9c59e1e488dd45&" alt="Imagem Título" style="width: 100%; max-width: 600px;">
+    <h1 style="color: #fff; margin: 1rem 0;">Relatório de problemas de energia</h1>
+    <p style="color: #fff; margin-bottom: 2rem;">Faça login para relatar um problema</p>
+  </header>
+  <main style="background-color: #f7f7f7; padding: 2rem 0;">
+    <section class="form" style="background-color: #fff; color: #000; border: 2px solid #0055aa; padding: 2rem; max-width: 600px; margin: 0 auto;">
+      <!-- Formulário de Cadastro -->
+      <form id="signupForm" style="display: none;">
+        <!-- ... (código do formulário de cadastro) ... -->
+      </form>
+      
+      <!-- Formulário de Login -->
+      <form id="loginForm" onsubmit="return checkLogin()">
+        <h2>Login</h2>
+        <div class="campos">
+          <label for="username" style="color: #000; margin-bottom: .5rem; display: block;">Usuário:</label>
+          <input type="text" name="username" id="username" required style="width: calc(100% - 1rem); padding: .5rem; border: 1px solid #ccc; margin-bottom: 1rem;">
+          
+          <label for="password" style="color: #000; margin-bottom: .5rem; display: block;">Senha:</label>
+          <input type="password" name="password" id="password" required style="width: calc(100% - 1rem); padding: .5rem; border: 1px solid #ccc; margin-bottom: 1rem;">
+        </div>
+        <div class="botao" style="text-align: center;" href="/inicial">
+          <input type="button" value="Entrar" onclick="checkLogin()" style="background-color: #ffcc00; color: #000; padding: .5rem 2rem; border-radius: 5px; border: none; cursor: pointer;">
+          <a href="/cadastro"><input type="button" value="Voltar"
+            style="background-color: #ffcc00; color: #000; padding: .5rem 2rem; border-radius: 5px; border: none; cursor: pointer;"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <p>Ainda não possui uma conta? <a id= "link_cadastro" href="/cadastro" onclick="toggleForm(event)">Cadastre-se</a></p>
+      </form>
+    </section>
+  </main>
+  
+  <footer style="background-color: #0055aa; color: #fff; text-align: center; padding: 1rem 0;">
+    &copy; 2023 Complain Here
+  </footer>
+
+  <script>
+    function checkLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Chamar o endpoint no servidor para verificar as credenciais
+      $.ajax({
+        type: 'POST',
+        url: '/verificar_login', // Endpoint a ser criado no servidor para verificar as credenciais
+        data: JSON.stringify({ username: username, password: password }),
+        contentType: 'application/json',
+        success: function(response) {
+          if (response.autenticado) {
+            window.location.href = '/inicial'; // Redirecionar se as credenciais estiverem corretas
+          } else {
+            alert('Credenciais inválidas. Por favor, tente novamente.');
+          }
+        }
+      });
+    }
+  </script>
+   {% if alerta %}
+   <script>
+       alert("{{ alerta }}");
+   </script>
+   {% endif %}
+</body>
+
+</html>

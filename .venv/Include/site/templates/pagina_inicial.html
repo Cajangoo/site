@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Complain Here</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style_inicial.css') }}">
+  <script "{{ url_for('static', filename='js/script_inicial.js') }}"></script>
+  <meta http-equiv="refresh" content="120 ; URL = pagina_de_login.html">
+</head>
+<body>
+  <header style="background-color: #0055aa; text-align: center; padding: 2rem 0;">
+    <img src="https://cdn.discordapp.com/attachments/955252715963957321/1176556126603587594/image.png?ex=656f4c47&is=655cd747&hm=198a337caa0a503c3c6f7896e3daf469e387b56a0a74fc2cbf9c59e1e488dd45&" alt="Imagem Título" style="width: 100%; max-width: 600px;">
+    <h1 style="color: #fff; margin: 1rem 0;">Relatório de problemas de energia</h1>
+    <p style="color: #fff; margin-bottom: 2rem;"></p>
+  </header>
+  <main style="background-color: #f7f7f7; padding: 2rem 0;">
+    <section class="form" style="background-color: #fff; color: #000; border: 2px solid #0055aa; padding: 2rem; max-width: 600px; margin: 0 auto;">
+
+      <!-- Elemento de saudação no canto superior direito -->
+      <div id="greeting"
+        style="position: fixed; top: 10px; right: 10px; background-color: #f0f0f0; padding: 10px; border: 1px solid #ccc; border-radius: 5px; display: none;">
+        <!-- Saudação será exibida aqui -->
+      </div>
+
+      <form id="meuFormulario">
+        <div class="campos">
+          <label for="tipo" style="color: #000; margin-bottom: .5rem; display: block;">Tipo de problema:</label>
+          <select name="tipo" id="tipo" required style="width: 100%; padding: .5rem; border: 1px solid #ccc; margin-bottom: 1rem;">
+            <option value="1">Falta de energia</option>
+            <option value="2">Falha no fornecimento de energia</option>
+            <option value="3">Outro</option>
+          </select>
+          
+          <label for="descricao" style="color: #000; margin-bottom: .5rem; display: block;">Descrição do problema:</label>
+          <textarea name="descricao" id="descricao" cols="30" rows="5" required style="width: 100%; padding: .5rem; border: 1px solid #ccc; margin-bottom: 1rem;"></textarea>
+          <label for="arquivos" style="color: #000; margin-bottom: .5rem; display: block;">Arquivos:</label>
+          <input type="file" name="arquivos[]" id="arquivos" multiple required style="width: 100%; padding: .5rem; border: 1px solid #ccc; margin-bottom: 1rem;">
+        </div>
+        <div class="botao" style="text-align: center;">
+          <input type="submit" value="Enviar" onclick="enviarFormulario(event)" style="background-color: #ffcc00; color: #000; padding: .5rem 2rem; border-radius: 5px; border: none; cursor: pointer;">
+          <a href="/login"><input type="button" value="Voltar"
+            style="background-color: #ffcc00; color: #000; padding: .5rem 2rem; border-radius: 5px; border: none; cursor: pointer;"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+      </form>
+      <div id="mensagemSucesso" style="display: none; text-align: center; margin-top: 20px;">
+        
+        <p>O formulário foi enviado com sucesso!</p>
+      </div>
+    </section>
+  </main>
+  <footer style="background-color: #0055aa; color: #fff; text-align: center; padding: 1rem 0;">
+    &copy; 2023 Complain Here
+  </footer>
+</body>
+</html>
