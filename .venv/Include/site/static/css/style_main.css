@@ -1,0 +1,68 @@
+/* Estilos para a página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+  }
+  
+  .header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .header-image {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+  }
+  
+  .navbar {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px;
+  }
+  
+  .navbar a {
+    float: right;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  .main {
+    padding: 20px;
+  }
+  
+  .filtro {
+    margin-bottom: 20px;
+  }
+  
+  .lista-denuncias {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .denuncia {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .sobre {
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }

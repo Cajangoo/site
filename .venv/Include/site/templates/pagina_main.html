@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Denúncias de Problemas de Energia</title>
+  <link rel="stylesheet" href="style_main.css">
+</head>
+<body style="background-color: #f5f5f5;">
+
+  <header class="header" style="background-color: #0055aa; color: #000000; text-align: center; padding: 2rem 0;">
+    <img src="https://cdn.discordapp.com/attachments/955252715963957321/1176556126603587594/image.png?ex=656f4c47&is=655cd747&hm=198a337caa0a503c3c6f7896e3daf469e387b56a0a74fc2cbf9c59e1e488dd45&" alt="Logo" class="header-image" style="width: 100%; max-width: 600px;">
+    <h1 class="header-title">Denúncias de Problemas de Energia</h1>
+  </header>
+  
+  <nav class="navbar" style="background-color: #0055aa; color: #000000; overflow: hidden; padding: 10px;">
+    <a href="#" id="sobreBtn" style="color: #000000;">Sobre</a>
+    <a href="#login" style="color: #000000;">Entrar / Logar</a>
+  </nav>
+
+  <main class="main" style="background-color: #f7f7f7; padding: 2rem 0;">
+    <section class="denuncias">
+      <h2 style="color: #000000;">Denúncias Recentes:</h2>
+      <div class="filtro">
+        <label for="filtro" style="color: #070707;">Filtrar por tipo de problema:</label>
+        <select id="filtro" style="background-color: #ffffff; color: #000000; padding: .5rem; border: 1px solid #ccc; margin-bottom: 1rem;">
+          <option value="todos">Todos</option>
+          <option value="falta_energia">Falta de Energia</option>
+          <option value="falha_fornecimento">Falha no Fornecimento</option>
+          <option value="outros">Outros</option>
+        </select>
+      </div>
+      <ul class="lista-denuncias">
+        <!-- Denúncias fictícias -->
+        <li class="denuncia falta_energia" style="display: none; color: #000000;">
+          <h3>Pedro Henrique</h3>
+          <p>Hoje dia 25/10 estou sem energia desde as 8:00, toda semana uma queda de energia, tá difícil!!!</p>
+        </li>
+        <li class="denuncia falta_energia" style="display: none; color: #000000;">
+          <h3>Carlos Eduardo</h3>
+          <p>Estou sem energia desde 5 horas da manhã.</p>
+        <li class="denuncia falta_energia" style="display: none; color: #000000;">
+            <h3>Valdirene Lopes</h3>
+            <p>Não aguento mais ficar sem energia, 2 dias seguidos já.</p>
+        </li>
+        <li class="denuncia falha_fornecimento" style="display: none; color: #000000;">
+          <h3>Joana Soares</h3>
+          <p>Energia aqui tem dias que não funciona.</p>
+        </li>
+        <li class="denuncia falha_fornecimento" style="display: none; color: #000000;">
+          <h3>Fabio Martins</h3>
+           <p>As luzes aqui de casa não param de piscar, o que eu faço?</p>
+        </li>
+        <li class="denuncia outros" style="display: none; color: #030303;">
+          <h3>Edmilson Andrade</h3>
+          <p>Queria fazer uma reclamação que cortaram minha luz e está tudo pago em dia!</p>
+        </li>
+        <li class="denuncia outros" style="display: none; color: #030303;">
+          <h3>Otávio Costa</h3>
+          <p>A semanas que quase todo dia dá pique de energia a cada 5 minutos, vai queimar minhas coisas.</p>
+        <!-- Adicione mais denúncias conforme necessário -->
+      </ul>
+    </section>
+  </main>
+
+  <aside class="sobre" style="display: none; background-color: rgb(10, 10, 10); color: #ffffff; padding: 20px; text-align: center;">
+    <h2>Sobre</h2>
+    <p>Este site é dedicado a receber denúncias relacionadas a problemas de energia, oferecendo um espaço para relatar e buscar soluções para questões de falta de energia e falhas no fornecimento.</p>
+  </aside>
+
+  <footer class="footer" style="background-color: #050505; color: #fcfcfc; text-align: center; padding: 1rem 0; position: fixed; bottom: 0; width: 100%;">
+    &copy; 2023 Complain Here
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
